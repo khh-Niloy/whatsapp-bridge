@@ -2,6 +2,14 @@ import { AppError } from "../error/AppError";
 import { wpClient } from "../wp-socket/whatsapp.client";
 
 const sendWpMessageService = async (phone: string, message: string) => {
+  if (!phone) {
+    throw new AppError(400, "Phone number is required");
+  }
+
+  if (!message) {
+    throw new AppError(400, "Message is required");
+  }
+
   const currentState = await wpClient.getState();
 
   if (currentState !== "CONNECTED") {
