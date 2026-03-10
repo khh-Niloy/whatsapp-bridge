@@ -10,3 +10,5 @@ messageRoutes.post(
   zodValidation(sendMessageSchema),
   messageController.sendWpMessage,
 );
+
+messageRoutes.get("/rate-limiting-test", messageController.test);
