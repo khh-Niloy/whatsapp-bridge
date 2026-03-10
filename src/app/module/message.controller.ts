@@ -23,6 +23,18 @@ const sendWpMessage = async (
   }
 };
 
+const test = async (req: Request, res: Response) => {
+  try {
+    res.json({
+      success: true,
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const messageController = {
   sendWpMessage,
+  test,
 };
