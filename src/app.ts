@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { routes } from "./route";
+import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
 
 export const app = express();
 
@@ -12,3 +13,5 @@ app.get("/", (req: Request, res: Response) => {
     message: "welcome to whatsapp-bridge backend",
   });
 });
+
+app.use(globalErrorHandler);

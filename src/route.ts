@@ -5,7 +5,7 @@ export const routes = Router();
 
 const allRoutes = [
   {
-    path: "/contents",
+    path: "/messages",
     route: messageRoutes,
   },
 ];
