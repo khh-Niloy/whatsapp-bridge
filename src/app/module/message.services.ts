@@ -21,8 +21,9 @@ const sendWpMessageService = async (phone: string, message: string) => {
     throw new Error("Phone number is not registered on WhatsApp");
   }
 
-  const msgResponsesss = await wpClient.sendMessage(`${phone}@c.us`, message);
-  return msgResponsesss;
+  const msgResponse = await wpClient.sendMessage(`${phone}@c.us`, message);
+
+  return msgResponse;
 };
 
 export const messageServices = {

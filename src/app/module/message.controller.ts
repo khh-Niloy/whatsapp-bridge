@@ -8,11 +8,14 @@ const sendWpMessage = async (
 ) => {
   try {
     const { phone, message } = req.body;
-    const data = await messageServices.sendWpMessageService(phone, message);
+    const msgResponse = await messageServices.sendWpMessageService(
+      phone,
+      message,
+    );
     res.json({
+      success: true,
       status: 200,
-      message: `message sent from ${data.from} to ${data.to}, successfully`,
-      data: data,
+      message: `message sent from ${msgResponse.from} to ${msgResponse.to}, successfully`,
     });
   } catch (error) {
     console.log(error);
