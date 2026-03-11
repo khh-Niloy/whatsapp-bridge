@@ -23,4 +23,5 @@ wpClient.on("auth_failure", () => {
 
 wpClient.on("disconnected", () => {
   console.log("disconnected");
+  wpClient.initialize();
 });
